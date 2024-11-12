@@ -9,6 +9,7 @@
 
 .container {
   display: flex;
+  height: 100%;
   align-items: center;
   width: 100%;
   min-width: 320px;

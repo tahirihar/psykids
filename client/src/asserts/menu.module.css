@@ -19,6 +19,7 @@
   display: flex;
   cursor: pointer;
   list-style: none;
+
   justify-content: center;
   @media (width <= 1220px) {
     display: flex;
@@ -37,7 +38,3 @@
     color: #7f7679;
   }
 }
-/* 
-li:first-child {
-  position: relative;
-} */

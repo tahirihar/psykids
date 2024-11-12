@@ -8,14 +8,32 @@ const Menu = ({ active, setActive }) => {
     {
       href: '/',
       key: uuidv4(),
-      titles: {
-        films: 'Фильмы',
-        serials: 'сериалы',
-        cartooms: 'мультфильмы',
-        anime: 'аниме',
-        telegram: 'telegram',
-        mirrors: 'наши зеркала',
-      },
+      title: 'все',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'детектив',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'история',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'мюзикл',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'ужасы',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'биография',
     },
   ];
   const [isSubmenuVisible, setSubmenuVisible] = useState(false);
@@ -37,10 +55,11 @@ const Menu = ({ active, setActive }) => {
         <li
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
-          style={{ position: 'relative' }}
           className={styles.film}>
           <a href="/film">ФИЛЬМЫ</a>
-          {/* <Submenu subMenuItems={subMenuItems} /> */}
+          {isSubmenuVisible ? (
+            <Submenu subMenuItems={subMenuItems} />
+          ) : null}
         </li>
         <li>
           <a href="/serial">СЕРИАЛЫ</a>
