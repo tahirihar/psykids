@@ -1,0 +1,15 @@
+.submenu {
+  display: none;
+  position: absolute;
+  transform: translateY(0);
+  transition: 0.3s;
+}
+.submenu__item a {
+  color: black !important;
+}
+.hidden__menu {
+  width: 880px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+}

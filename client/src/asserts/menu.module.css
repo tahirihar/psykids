@@ -1,0 +1,43 @@
+.nav {
+  background-color: transparent;
+  font-size: 0.875rem;
+  @media (width <= 1220px) {
+    display: block;
+    position: absolute;
+    top: 70px;
+    max-width: 1000px;
+    transform: translateX(-150%);
+    transition: all 0.2s;
+  }
+  @media (width <= 950px) {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.list {
+  display: flex;
+  cursor: pointer;
+  list-style: none;
+  justify-content: center;
+  @media (width <= 1220px) {
+    display: flex;
+    padding: 10px 0;
+    flex-direction: column;
+    background-color: black;
+    line-height: 30px;
+  }
+}
+.nav.active {
+  transform: translateX(0);
+}
+
+@media (width <= 1220px) {
+  .nav :global(a:hover) {
+    color: #7f7679;
+  }
+}
+/* 
+li:first-child {
+  position: relative;
+} */
