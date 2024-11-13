@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from '../../asserts/menu.module.css';
-import Submenu from './Submenu';
+import SubmenuFilms from './SubmenuFilms';
+import SubmenuSerials from './SubmenuSerials';
+import SubmenuCartoons from './SubmenuCartoons';
 
 const Menu = ({ active, setActive }) => {
-  const subMenuItems = [
+  const subMenuFilmsItems = [
     {
       href: '/',
       key: uuidv4(),
@@ -36,15 +38,78 @@ const Menu = ({ active, setActive }) => {
       title: 'биография',
     },
   ];
-  const [isSubmenuVisible, setSubmenuVisible] = useState(false);
 
-  const handleMouseEnter = () => {
-    setSubmenuVisible(true);
-  };
+  const subMenuSerialsItems = [
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'все',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'вестерн',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'фэнтази',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'комедия',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'детектив',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'криминал',
+    },
+  ];
 
-  const handleMouseLeave = () => {
-    setSubmenuVisible(false);
-  };
+  const subMenuCartoonsItems = [
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'все',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'мелодрама',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'фантастика',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'криминал',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'военный',
+    },
+    {
+      href: '/',
+      key: uuidv4(),
+      title: 'история',
+    },
+  ];
+  const [isFilmsSubmenuVisible, setIsFilmsSubmenuVisible] =
+    useState(false);
+  const [isSerialsSubmenuVisible, setIsSerialsSubmenuVisible] =
+    useState(false);
+  const [isCartoonsSubmenuVisible, setIsCartoonsSubmenuVisible] =
+    useState(false);
 
   return (
     <nav
@@ -53,19 +118,32 @@ const Menu = ({ active, setActive }) => {
       }>
       <ul className={styles.list}>
         <li
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          className={styles.film}>
+          onMouseEnter={() => setIsFilmsSubmenuVisible(true)}
+          onMouseLeave={() => setIsFilmsSubmenuVisible(false)}>
           <a href="/film">ФИЛЬМЫ</a>
-          {isSubmenuVisible ? (
-            <Submenu subMenuItems={subMenuItems} />
+          {isFilmsSubmenuVisible ? (
+            <SubmenuFilms subMenuFilmsItems={subMenuFilmsItems} />
           ) : null}
         </li>
-        <li>
+        <li
+          onMouseEnter={() => setIsSerialsSubmenuVisible(true)}
+          onMouseLeave={() => setIsSerialsSubmenuVisible(false)}>
           <a href="/serial">СЕРИАЛЫ</a>
+          {isSerialsSubmenuVisible ? (
+            <SubmenuSerials
+              subMenuSerialsItems={subMenuSerialsItems}
+            />
+          ) : null}
         </li>
-        <li>
+        <li
+          onMouseEnter={() => setIsCartoonsSubmenuVisible(true)}
+          onMouseLeave={() => setIsCartoonsSubmenuVisible(false)}>
           <a href="/multfilm">МУЛЬТФИЛЬМЫ</a>
+          {isCartoonsSubmenuVisible ? (
+            <SubmenuCartoons
+              subMenuCartoonsItems={subMenuCartoonsItems}
+            />
+          ) : null}
         </li>
         <li>
           <a href="/anime">АНИМЕ</a>

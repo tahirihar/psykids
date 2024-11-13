@@ -10,7 +10,11 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div
-          className={styles.burgerBtn}
+          className={
+            menuActive === true
+              ? `${styles.burgerBtn} ${styles.close}`
+              : styles.burgerBtn
+          }
           onClick={() => setMenuActive(!menuActive)}>
           <span className={styles.span}></span>
         </div>
@@ -30,10 +34,6 @@ const Header = () => {
           </i>
         </span>
       </div>
-
-      {/* <div>
-        <SubmenuFilm isVisible={isSubmenuVisible} />
-      </div> */}
     </header>
   );
 };
