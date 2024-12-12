@@ -7,7 +7,7 @@
 .imageWrapper {
   position: relative;
   width: 100%;
-  padding-top: 56.25%;
+  padding-top: 48.5%;
   overflow: hidden;
   min-height: 200px;
   @media (max-width: 576px) {
@@ -26,25 +26,6 @@
   object-position: center;
 }
 
-.swiper-pagination {
-  height: 50px;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  @media (width <= 1025px) {
-    height: 20px;
-  }
-}
-.swiper-pagination-bullet {
-  background-color: #ccc;
-  opacity: 1;
-  height: 10px;
-  width: 10px;
-}
-.swiper-pagination-bullet-active {
-  background-color: #ffc00c;
-}
 .title {
   position: absolute;
   top: 70%;
@@ -64,4 +45,28 @@
   @media (width <= 550px) {
     font-size: 1.25rem;
   }
+}
+
+.swiper-pagination
+  .swiper-pagination-clickable
+  .swiper-pagination-bullets
+  .swiper-pagination-horizontal {
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  @media (width <= 1025px) {
+    height: 20px;
+  }
+}
+
+.swiper-pagination > .swiper-pagination-bullet {
+  background-color: #ccc !important;
+  opacity: 1;
+  height: 10px;
+  width: 10px;
+}
+.swiper-pagination > .swiper-pagination-bullet-active {
+  background-color: #ffc00c !important;
 }

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../../asserts/sectionTwo.module.css';
+import PosterDescription from './PosterDescription';
+import filmsOfSectionTwo from '../../data/filmsOfSectionTwo';
 
-const SectionTwo = ({ itemsList }) => {
+const SectionTwo = () => {
   // const [isHover, setIsHover] = useState(false);
 
   // useEffect(() => {
@@ -17,23 +19,20 @@ const SectionTwo = ({ itemsList }) => {
       </h2>
       <div className={styles.content}>
         <ul className={styles.list}>
-          {itemsList.map((el) => (
-            <li className={styles.item} key={el.key}>
-              <a  href={el.href}>
-                <div>
-                  <img className={styles.image} src={el.value} />
+          {filmsOfSectionTwo.map((el) => (
+            <li key={el.key}>
+              <a href={el.href}>
+                <div className={styles.posterInner}>
+                  <img
+                    className={styles.image}
+                    src={el.value}
+                    loading="lazy"
+                  />
                 </div>
                 <strong className={styles.posterTitle}>
                   {el.title}
                 </strong>
-                {/* <div className={styles.posterDiscription}>
-                  <img className={styles.posterBg} src={el.value} />.
-                  <p className={styles.paragraph}>{el.discription}</p>
-                  <span className={styles.span}>
-                    смотреть
-                    {el.icon && React.createElement(el.icon)}
-                  </span>
-                </div> */}
+                {/* <PosterDescription /> */}
               </a>
             </li>
           ))}

@@ -29,13 +29,16 @@ const Header = () => {
             <TbLogin2 />
           </i>
           <span className={styles.avto}>Авторизация</span>
-          <i className={styles.icon}>
-            <IoIosSearch />
-          </i>
         </span>
+        <i className={styles.icon}>
+          <IoIosSearch />
+        </i>
       </div>
     </header>
   );
 };
 
 export default Header;
+
+
+

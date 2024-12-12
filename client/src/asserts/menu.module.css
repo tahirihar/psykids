@@ -2,20 +2,18 @@
   background-color: transparent;
   height: 100%;
   font-size: 0.875rem;
-  display: flex;
-  justify-content: center;
-  align-items: end;
 
   @media (width <= 1220px) {
     display: block;
     position: absolute;
     top: 70px;
     width: 100%;
-
+    justify-content: center;
+    align-items: center;
+    height: 200px;
     max-width: 1000px;
     transform: translateX(-150%);
     transition: all 0.2s;
-    background-color: rgb(0, 0, 0);
   }
   @media (width <= 950px) {
     width: 100%;
@@ -25,19 +23,23 @@
 
 .list {
   display: flex;
-  cursor: pointer;
-  list-style: none;
-  background-color: rgb(0, 0, 0);
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  height: 70px;
+  list-style: none;
   @media (width <= 1220px) {
     display: flex;
     align-items: start;
-    top: 30%;
+    height: 100%;
     flex-direction: column;
-
     line-height: 30px;
+    background-color: rgb(0, 0, 0);
   }
+}
+
+.list a {
+  font-size: 0.8rem;
 }
 .nav.active {
   transform: translateX(0);

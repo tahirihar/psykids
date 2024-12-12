@@ -37,20 +37,17 @@
 }
 
 .list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
-  gap: 20px 10px;
+  gap: 20px 30px;
+  @media (width <= 760px) {
+    grid-template-columns: 1fr;
+  }
 }
 
-.item {
+.posterInner {
   position: relative;
-  flex: 1 1 20%;
-  height: auto;
-  margin: 0;
-  @media (width <= 760px) {
-    flex: 1 1 40%;
-  }
 }
 
 .image {
@@ -70,38 +67,5 @@
   padding: 5px 0;
   font-size: 0.875rem;
   color: #fff;
-  text-align: center;
-  
-}
-.posterDiscription {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-  width: 285px;
-  height: 430px;
-  opacity: 0;
-  text-align: center;
-  color: #fff;
-}
-.posterDiscription .paragraph {
-  text-align: left;
-  font-size: 0.75rem;
-  z-index: 10;
-}
-.posterBg {
-  width: 100%;
-}
-.posterDiscription .span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  text-transform: uppercase;
-  color: #fff;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  z-index: 150;
   text-align: center;
 }
