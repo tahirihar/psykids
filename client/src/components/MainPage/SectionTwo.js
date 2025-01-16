@@ -4,7 +4,7 @@ import PosterDescription from './PosterDescription';
 import filmsOfSectionTwo from '../../data/filmsOfSectionTwo';
 
 const SectionTwo = () => {
-  // const [isHover, setIsHover] = useState(false);
+  const [hovered, setHovered] = useState(null);
 
   // useEffect(() => {
   //   const handleResize = () => setisMobile(window.innerWidth < 590);
@@ -20,19 +20,32 @@ const SectionTwo = () => {
       <div className={styles.content}>
         <ul className={styles.list}>
           {filmsOfSectionTwo.map((el) => (
-            <li key={el.key}>
+            <li className={styles.listElement} key={el.key}>
               <a href={el.href}>
-                <div className={styles.posterInner}>
+                <div
+                  className={styles.posterInner}
+                  onMouseEnter={() => setHovered(el.key)}
+                  onMouseLeave={() => setHovered(null)}>
                   <img
                     className={styles.image}
                     src={el.value}
                     loading="lazy"
                   />
+
+                  {hovered === el.key && (
+                    <PosterDescription
+                      value={el.value}
+                      discription={el.discription}
+                      icon={el.icon}
+                      city={el.city}
+                      age={el.age}
+                      director={el.director}
+                    />
+                  )}
                 </div>
                 <strong className={styles.posterTitle}>
                   {el.title}
                 </strong>
-                {/* <PosterDescription /> */}
               </a>
             </li>
           ))}
