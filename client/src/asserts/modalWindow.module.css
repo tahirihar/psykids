@@ -1,0 +1,129 @@
+.card {
+  position: absolute;
+  padding: 0 !important;
+  width: 320px;
+
+  min-height: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 500;
+  background-color: white;
+
+  opacity: 0;
+  transition: all 0.3s ease, transform 0.3s ease;
+}
+
+.card.show {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.title {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 15px 20px;
+  font-size: 1rem;
+  position: relative;
+}
+.content {
+  list-style: none;
+}
+
+.element {
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.login {
+  padding: 20px !important;
+  padding-top: 40px !important;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #2a2a2a;
+}
+
+.content a {
+  cursor: pointer;
+}
+
+.input {
+  height: 40px !important;
+  width: 100%;
+  padding: 0 10px !important;
+
+  line-height: 40px;
+  border-radius: 3px !important;
+  border: 1px solid #e3e3e3 !important;
+}
+.input:focus {
+  box-shadow: none !important;
+}
+
+.card i {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  top: 10px;
+  color: white;
+  right: 10px;
+  font-size: 2rem;
+}
+
+/* .check input {
+  display: none;
+} */
+
+.check {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  line-height: 40px;
+  margin-bottom: 20px;
+}
+
+.smnElse {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: black;
+}
+.smnElse::before {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #e3e3e3;
+  content: '';
+  float: left;
+  position: relative;
+  top: 8px;
+}
+input:checked + .smnElse::before {
+  background-color: #d80306;
+}
+
+.button {
+  padding: 0 20px;
+
+  color: white;
+  display: inline-block;
+  background-color: #596773;
+  height: 32px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: none;
+}
+
+.button:hover {
+  background-color: #444;
+}
