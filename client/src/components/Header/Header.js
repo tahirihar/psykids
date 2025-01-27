@@ -16,13 +16,14 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
+        {/* кнопка бургер меню */}
         <div
           className={
             menuActive === true
               ? `${styles.burgerBtn} ${styles.close}`
               : styles.burgerBtn
           }
-          onClick={toggleModal}>
+          onClick={() => setMenuActive(!menuActive)}>
           <span className={styles.span}></span>
         </div>
         <div className={styles.logo}>
@@ -34,13 +35,13 @@ const Header = () => {
         <span
           className={styles.login}
           onClick={() => setLoginClick(!loginClick)}>
-          <i className={styles.icon}>
+          <i>
             <TbLogin2 />
           </i>
           <span className={styles.avto}>Авторизация</span>
         </span>
         <Link to="search">
-          <i className={styles.icon}>
+          <i className={`${styles.icon} ${styles.search}`}>
             <IoIosSearch />
           </i>
         </Link>

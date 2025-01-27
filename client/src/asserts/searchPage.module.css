@@ -1,13 +1,12 @@
 .container {
   display: flex;
   flex-direction: column;
-
-  padding: 100px 0;
+  padding: 40px 0;
   position: relative;
   z-index: 200;
   overflow: hidden;
   @media (width <= 1220px) {
-    padding: 60px 10px 0 10px;
+    padding: 30px 10px 0 10px;
   }
 }
 .searchBlock {
@@ -39,7 +38,7 @@
   border: 1px solid rgb(105, 105, 105);
   text-align: center;
   padding: 10px 15px 20px 15px;
-  border-radius: 6px;
+
   overflow: hidden;
 }
 .input {
@@ -61,4 +60,22 @@
 }
 .button:hover {
   background-color: #444;
+}
+
+/* //сообщание об ошибке поиска */
+.berrors {
+  margin: auto;
+  display: none;
+
+  flex-direction: column;
+  background-color: #fce5ba;
+  color: #a76846;
+  padding: 20px;
+  min-height: 60px;
+  width: calc(100% - 40px);
+}
+
+.berrors b {
+  display: block;
+  font-weight: 700;
 }

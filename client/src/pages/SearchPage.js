@@ -3,6 +3,11 @@ import styles from '../asserts/searchPage.module.css';
 const SearchPage = () => {
   return (
     <div className={styles.container}>
+      {/* сообщение об ошибке поиска */}
+      <div className={styles.berrors}>
+        <b>Внимание! Обнаружена ошибка</b>
+        <span>По вашему запросу мы ничего не нашли.</span>
+      </div>
       <div className={styles.searchBlock}>
         <h2 className={styles.title}>
           <span className={styles.line} />
@@ -16,7 +21,6 @@ const SearchPage = () => {
             className={styles.input}
             type="text"
             id="search-input"
-           
           />
           <button className={styles.button} type="submit">
             Начать поиск
