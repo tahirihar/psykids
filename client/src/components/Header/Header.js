@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { TbLogin2 } from 'react-icons/tb';
 import { IoIosSearch } from 'react-icons/io';
 import Menu from './Menu';
@@ -25,9 +26,9 @@ const Header = () => {
           <span className={styles.span}></span>
         </div>
         <div className={styles.logo}>
-          <a className={styles.a} href="/">
+          <Link to="/" className={styles.a}>
             PHYSKIDS
-          </a>
+          </Link>
         </div>
         <Menu active={menuActive} setActive={setMenuActive} />
         <span
@@ -38,9 +39,11 @@ const Header = () => {
           </i>
           <span className={styles.avto}>Авторизация</span>
         </span>
-        <i className={styles.icon}>
-          <IoIosSearch />
-        </i>
+        <Link to="search">
+          <i className={styles.icon}>
+            <IoIosSearch />
+          </i>
+        </Link>
         {loginClick && (
           <div
             className={`${styles.backModal} ${

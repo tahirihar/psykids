@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import styles from '../../asserts/menu.module.css';
 import SubmenuFilms from './SubmenuFilms';
@@ -120,7 +121,7 @@ const Menu = ({ active, setActive }) => {
         <li
           onMouseEnter={() => setIsFilmsSubmenuVisible(true)}
           onMouseLeave={() => setIsFilmsSubmenuVisible(false)}>
-          <a href="/film">ФИЛЬМЫ</a>
+          <Link to="films">ФИЛЬМЫ</Link>
           {isFilmsSubmenuVisible ? (
             <SubmenuFilms subMenuFilmsItems={subMenuFilmsItems} />
           ) : null}
@@ -128,7 +129,7 @@ const Menu = ({ active, setActive }) => {
         <li
           onMouseEnter={() => setIsSerialsSubmenuVisible(true)}
           onMouseLeave={() => setIsSerialsSubmenuVisible(false)}>
-          <a href="/serial">СЕРИАЛЫ</a>
+          <Link to="serial">СЕРИАЛЫ</Link>
           {isSerialsSubmenuVisible ? (
             <SubmenuSerials
               subMenuSerialsItems={subMenuSerialsItems}
@@ -138,7 +139,7 @@ const Menu = ({ active, setActive }) => {
         <li
           onMouseEnter={() => setIsCartoonsSubmenuVisible(true)}
           onMouseLeave={() => setIsCartoonsSubmenuVisible(false)}>
-          <a href="/multfilm">МУЛЬТФИЛЬМЫ</a>
+          <Link to="multfilm">МУЛЬТФИЛЬМЫ</Link>
           {isCartoonsSubmenuVisible ? (
             <SubmenuCartoons
               subMenuCartoonsItems={subMenuCartoonsItems}
@@ -146,13 +147,13 @@ const Menu = ({ active, setActive }) => {
           ) : null}
         </li>
         <li>
-          <a href="/anime">АНИМЕ</a>
+          <Link to="anime">АНИМЕ</Link>
         </li>
         <li>
-          <a href="/newdeaf">НОВИНКИ</a>
+          <Link to="newdeaf">НОВИНКИ</Link>
         </li>
         <li>
-          <a href="/deafrelease">МЫ В TELEGRAM</a>
+          <Link to="deafrelease">МЫ В TELEGRAM</Link>
         </li>
       </ul>
     </nav>
