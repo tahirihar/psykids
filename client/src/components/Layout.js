@@ -1,17 +1,19 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import styles from '../asserts/layout.module.css';
 
 const Layout = () => {
+  const location = useLocation();
+  const hideHeaderandFooter = location.pathname === '/not-found';
   return (
     <>
-      <Header />
+      {!hideHeaderandFooter && <Header />}
       <main className={styles.main}>
         <Outlet />
       </main>
 
-      <Footer />
+      {!hideHeaderandFooter && <Footer />}
     </>
   );
 };

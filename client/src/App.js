@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import MainPage from './pages/MainPage';
 import Layout from './components/Layout';
@@ -13,7 +13,10 @@ function App() {
           <Route index element={<MainPage />} />
           <Route path="search" element={<SearchPage />} />
 
-          <Route path="*" element={<NotFound />} />
+          <Route path="not-found" element={<NotFound />} />
+          <Route
+            path="*"
+            element={<Navigate to="not-found" replace />}></Route>
         </Route>
       </Routes>
     </div>
